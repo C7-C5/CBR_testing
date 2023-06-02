@@ -35,7 +35,7 @@ class CompareCurrency:
         :param obj: Currency object with all attributes
         :return:
         """
-        compare_obj = next(currency for currency in self.compare_object.values if currency.id == obj.id)
+        compare_obj = next((currency for currency in self.compare_object.values if currency.id == obj.id), None)
         if not compare_obj:
             raise ValueError(f'{ErrorMessages.WRONG_ID.value}, ID: {obj.id}, name: {obj.name}')
 
